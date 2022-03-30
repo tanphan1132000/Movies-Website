@@ -23,7 +23,7 @@ export default function VideoCard({movie}) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Link to={"/movie/" + movie.id}><Button size="small">Xem</Button></Link>
+                <Button component={Link} to={"/movie/" + movie.id} variant='outlined'>Xem</Button>
             </CardActions>
         </Card>        
     );
