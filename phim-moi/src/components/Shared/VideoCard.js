@@ -15,7 +15,7 @@ export default function VideoCard({movie}) {
                 alt={movie.title}
             />
             <CardContent>
-                <Typography variant='h5' color="text.secondary" gutterBottom>
+                <Typography variant='h5' color="text.secondary">
                     {movie.title}
                 </Typography>
                 <Typography variant='body2' color="text.secondary">
@@ -23,7 +23,7 @@ export default function VideoCard({movie}) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Link to="/Movie"><Button size="small">Xem</Button></Link>
+                <Link to={"/movie/" + movie.id}><Button size="small">Xem</Button></Link>
             </CardActions>
         </Card>        
     );

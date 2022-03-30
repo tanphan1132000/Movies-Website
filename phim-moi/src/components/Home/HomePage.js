@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import VideoCard from '../Shared/VideoCard';
@@ -6,16 +6,22 @@ import VideoCard from '../Shared/VideoCard';
 export default function HomePage() {
     const [movies, setMovies] = useState([])
     useEffect(() => {
-        fetch('/api/movie')
-        .then(res => res.json())
-        .then(res => setMovies(res.content))
+        fetch('/api/movies')
+            .then(res => res.json())
+            .then(res => setMovies(res.content))
+            .then(res => console.log(movies))
     }, [])
 
     return (
-        <Box>
-            <Grid container>
-                {movies.map( (movie, index)  => <VideoCard movie={movie} key={index}/>)}
-            </Grid>
-        </Box>
+        <Grid container
+            columns={4}
+            sx={{
+                columnGap: 5,
+                rowGap: 5,
+                mt: "2%"
+            }}
+        >
+            {movies.map((movie, index) => <VideoCard movie={movie} key={index} />)}
+        </Grid>
     );
 }

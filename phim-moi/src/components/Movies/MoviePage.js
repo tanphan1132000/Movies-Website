@@ -1,16 +1,19 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-export default function MoviePage() {
-    const [content, setContent] = useState('init')
-
+export default function MoviePage(props) {
+    const [content, setContent] = useState({})
+    let {movieId} = useParams()
     useEffect(() => {
-        fetch('/movie')
-        .then(res => res.json())
-        .then(res => setContent(res.api))
+        fetch('/api/movie/' + movieId)
+            .then(res => res.json())
+            .then(res => setContent(res.content))
     }, [])
 
 
     return (
-        <h1>{content}</h1>
+        <div>
+            <h1>{content.name}</h1>
+        </div>
     )
 }
