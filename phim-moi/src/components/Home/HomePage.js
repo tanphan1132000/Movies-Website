@@ -14,6 +14,8 @@ export default function HomePage() {
     return (
         <Grid container
             columns={4}
+            justifyContent="center"
+            alignItems="center"
             sx={{
                 columnGap: 5,
                 rowGap: 5,
