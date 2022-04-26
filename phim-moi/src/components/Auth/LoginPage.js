@@ -1,7 +1,14 @@
 import { Button, Stack, TextField, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function LoginPage() {
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
+    useEffect(() => {
+        console.log(username, password)
+    }, [username, password])
+
     return (
         <Stack spacing={5}
             sx={{
@@ -18,6 +25,9 @@ export default function LoginPage() {
                 label="Username"
                 type="search"
                 variant="outlined"
+                onChange={(e) => {
+                    setUsername(e.target.value)
+                }}
             />
             <TextField
                 id="standard-password-input"
@@ -25,6 +35,9 @@ export default function LoginPage() {
                 type="password"
                 autoComplete="current-password"
                 variant="outlined"
+                onChange={(e) => {
+                    setPassword(e.target.value)
+                }}
             />
             <Stack
                 direction='row'

@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from '@mui/material/Card';
-import { CardMedia, CardContent, CardActions, CardActionArea } from '@mui/material';
-import Button from '@mui/material/Button';
+import { CardMedia, CardContent, CardActionArea } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 

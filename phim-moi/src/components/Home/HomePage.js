@@ -8,7 +8,6 @@ export default function HomePage() {
         fetch('/api/movies')
             .then(res => res.json())
             .then(res => setMovies(res.content))
-            .then(res => console.log(movies))
     }, [])
 
     return (

@@ -49,7 +49,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         [theme.breakpoints.up('md')]: {
             width: '20ch',
             '&:focus': {
-                width: '40ch',
+                width: '30ch',
               },
         },
     },
@@ -77,7 +77,6 @@ export default function Navbar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
-                    <Box sx={{ flexGrow: 1 }} />
                     <IconButton color="inherit">
                         <NotificationsIcon />
                     </IconButton>
