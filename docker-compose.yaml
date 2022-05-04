@@ -1,0 +1,23 @@
+version: '3'
+services:
+  phim-moi-mongo:
+    image: 'mongo'
+    volumes:
+      - phim-moi-db:/data
+  phim-moi-redis:
+    image: 'redis'
+  phim-moi-server:
+    build:
+      context: ./phim-moi-server
+    depends_on:
+      - phim-moi-redis
+      - phim-moi-mongo
+  phim-moi:
+    build:
+      context: ./phim-moi
+    ports:
+      - 80:80
+    depends_on:
+      - phim-moi-server
+volumes:
+  phim-moi-db:
